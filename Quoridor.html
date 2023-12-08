@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<style>
+  .no-drag{
+    -ms-user-select:none;
+    -moz-user-select:-mozs-none;
+    -webkit-user-selcet:none;
+    -khtml-user-select:none;
+    user-select:none;
+    font-family: '함초롬돋움';
+  }
+
+  table{
+    border-collapse:collapse;
+    border:2px solid;
+  }
+
+  #move_zone{
+    border:1px solid;
+    background-color:rgb(220,152,97);
+    width:55px;
+    height:55px;
+  }
+
+  #set_zone{
+    border:1px solid;
+    width:6px;
+    height:6px;
+    background-color:rgb(148,26,20);
+  }
+
+  #wall_zone{
+    border:2px solid;
+    width:6px;
+    height:6px;
+    background-color:rgb(148,26,20);
+  }
+
+  #wall{
+    border:2px solid;
+    width:6px;
+    height:6px;
+    background-color:rgb(210,210,210);
+  }
+
+  #player1{
+    border:2px solid;
+    border-radius:50%;
+    background-color:rgb(150,150,255);
+    width:50px;
+    height:50px;
+  }
+
+  #player2{
+    border:2px solid;
+    border-radius:50%;
+    background-color:rgb(60,255,60);
+    width:50px;
+    height:50px;
+  }
+
+  #canmove{
+    background-color:rgb(50,150,50);
+  }
+
+  #player1_div{
+    position: absolute;
+    z-index:3;
+    text-align:center;
+    border:3px solid;
+    border-radius:15px;
+    width:400px;
+    height:200px;
+    left:700px;
+    top:30px;
+  }
+
+  #player2_div{
+    position: absolute;
+    z-index:3;
+    text-align:center;
+    border:3px solid;
+    border-radius:15px;
+    width:400px;
+    height:200px;
+    left:700px;
+    top:370px;
+  }
+
+  #change_div{
+    position: absolute;
+    z-index:3;
+    text-align:center;
+    font-size:19px;
+    border:3px solid;
+    border-radius:10px;
+    width:150px;
+    height:30px;
+    left:730px;
+    top:285px;
+  }
+
+  #undo_div{
+    position: absolute;
+    z-index: 3;
+    border:3px solid;
+    border-radius:10px;
+    text-align:center;
+    font-size:19px;
+    width:100px;
+    height:30px;
+    left:950px;
+    top:285px;
+  }
+</style>
+<body class='no-drag' onload = 'draw_map()'>
+<div id='player1_div'>
+  player1
+  <p id='p1'></p>
+</div>
+
+<div id='change_div' onclick='change()'>
+방향전환(가로)
+</div>
+
+<div id='undo_div' onclick="undo()">
+무르기
+</div>
+
+<div id='player2_div'>
+  player2
+  <p id='p2'></p>
+</div>
+
+<div id='map'>
+</div>
+
+</body>
+<script type="text/javascript" src="player.js"></script>
+<script type="text/javascript" src="system.js"></script>
+<script>
+const player1 = new Player_data(9,1,0,6);
+const player2 = new Player_data(9,17,1,7);
+</script>
+</html>
